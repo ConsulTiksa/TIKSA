@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotización | CONSULTORES ESPECIALIZADOS TIKSA</title>
+
+  <link rel="icon" type="image/svg+xml" href="data/logo-tiksa.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a href="index.html" class="back-home-btn">← Volver al inicio</a>
+
+<header class="site-header" id="inicio">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#inicio" class="brand">
+        <img src="data/logo-tiksa.svg" alt="Logo Consultores Especializados TIKSA" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-title">CONSULTORES ESPECIALIZADOS</span>
+          <span class="brand-subtitle">TIKSA</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="nav-strip">
+    <div class="container">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="index.html#proceso">Proceso</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="cotizacion.html" class="btn-nav">Cotizar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- QUIÉNES SOMOS -->
+  <section class="section reveal" id="nosotros">
+    <div class="container about-grid">
+      <div>
+        <header class="section-header left">
+          <h2>Quiénes somos</h2>
+        </header>
+        <p>
+          CONSULTORES ESPECIALIZADOS TIKSA es una empresa enfocada en brindar soluciones integrales
+          en imprenta, mercancía promocional y estampado. Nuestro enfoque es consultivo:
+          no solo producimos, te ayudamos a decidir qué es lo mejor para tu marca.
+        </p>
+        <p>
+          Trabajamos con empresas, emprendedores y agencias que buscan aliados confiables para
+          llevar su identidad visual a otro nivel, cuidando cada detalle desde el diseño hasta la entrega.
+        </p>
+      </div>
+
+      <div class="about-highlight">
+        <h3>Cómo trabajamos contigo</h3>
+        <ul>
+          <li>Escuchamos tu proyecto antes de hablar de precios.</li>
+          <li>Proponemos materiales y combinaciones que tengan sentido para tu marca.</li>
+          <li>Te acompañamos desde el arte hasta la producción final.</li>
+          <li>Buscamos relaciones a largo plazo, no pedidos aislados.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COTIZACIÓN -->
+  <section class="section section-alt reveal">
+    <div class="container">
+      <header class="section-header left">
+        <h2>Solicita una cotización</h2>
+        <p>
+          Comparte los detalles de tu proyecto para poder enviarte una propuesta clara y alineada
+          a lo que necesitas. Entre más específico seas, mejor podremos orientarte.
+        </p>
+      </header>
+
+      <div class="quote-layout">
+        <div class="quote-info">
+          <h3 class="quote-subtitle">Información general</h3>
+          <p>
+            Utilizaremos esta información únicamente para contactarte respecto a esta cotización
+            y dar seguimiento a tus proyectos con TIKSA.
+          </p>
+          <ul class="quote-list">
+            <li>Te respondemos normalmente en menos de 24 horas hábiles.</li>
+            <li>Podemos agendar una llamada si requieres una asesoría más detallada.</li>
+            <li>Si ya cuentas con artes finales, podrás adjuntarlos en el correo de respuesta.</li>
+          </ul>
+        </div>
+
+        <form
+                class="quote-form"
+                id="cotizacion-form"
+                action="mailto:ventas@tiksa.com"
+                method="POST"
+                enctype="text/plain"
+        >
+          <div class="form-row">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="Nombre" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="Correo" required />
+          </div>
+
+          <div class="form-row">
+            <label for="empresa">Empresa (opcional)</label>
+            <input type="text" id="empresa" name="Empresa" />
+          </div>
+
+          <div class="form-row">
+            <label for="servicio">Servicio de interés</label>
+            <select id="servicio" name="Servicio" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Imprenta profesional">Imprenta profesional</option>
+              <option value="Mercancía promocional">Mercancía promocional</option>
+              <option value="Estampado y textil">Estampado y textil</option>
+              <option value="Otro">Otro / combinación de servicios</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="cantidad">Cantidad aproximada</label>
+            <input
+                    type="text"
+                    id="cantidad"
+                    name="Cantidad aproximada"
+                    placeholder="Ej. 250 libretas, 100 playeras, 50 termos"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="presupuesto">Presupuesto estimado (opcional)</label>
+            <input
+                    type="text"
+                    id="presupuesto"
+                    name="Presupuesto estimado"
+                    placeholder="Ej. $10,000 MXN"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="mensaje">Detalles del proyecto</label>
+            <textarea
+                    id="mensaje"
+                    name="Detalles del proyecto"
+                    rows="4"
+                    required
+                    placeholder="Fechas estimadas, usos del material, ideas que tengas, etc."
+            ></textarea>
+          </div>
+
+          <div class="form-row form-row-inline">
+            <label class="checkbox-label">
+              <input type="checkbox" name="Aviso de privacidad" value="Aceptado" required />
+              <span>
+                  He leído y acepto el aviso de privacidad y el tratamiento de mis datos personales.
+                </span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">
+            Enviar solicitud de cotización
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <nav class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="cotizacion.html">Cotización</a>
+      </nav>
+      <p class="footer-copy">
+        © <span id="year"></span> CONSULTORES ESPECIALIZADOS TIKSA. Todos los derechos reservados.
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <img src="data/logo-tiksa.svg" alt="Logo TIKSA" class="footer-logo" />
+      <button type="button" class="footer-privacy-btn" id="privacy-open">
+        Aviso de privacidad
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal de aviso de privacidad -->
+  <div class="privacy-modal" id="privacy-modal">
+    <div class="privacy-modal-backdrop" id="privacy-backdrop"></div>
+    <div class="privacy-modal-content">
+      <button type="button" class="privacy-close" id="privacy-close">&times;</button>
+      <h3>Aviso de privacidad</h3>
+      <p>
+        CONSULTORES ESPECIALIZADOS TIKSA, en su carácter de responsable del tratamiento de los datos
+        personales que nos proporciones, hace de tu conocimiento que dichos datos serán utilizados
+        únicamente para fines de atención, cotización y seguimiento de los servicios que solicites.
+      </p>
+      <p>
+        Podrás ejercer en todo momento tus derechos de Acceso, Rectificación, Cancelación y Oposición
+        (derechos ARCO), así como revocar el consentimiento que nos hayas otorgado, enviando un correo a:
+        <strong>datos@tiksa.com</strong>.
+      </p>
+      <p>
+        Para conocer el aviso de privacidad integral y las modificaciones que en su caso se realicen,
+        podrás consultarlo en todo momento a través de nuestros canales oficiales.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
