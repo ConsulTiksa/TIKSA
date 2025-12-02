@@ -163,3 +163,55 @@ if (privacyClose) {
 if (privacyBackdrop) {
   privacyBackdrop.addEventListener("click", closePrivacy);
 }
+
+/* -------- ENVÍO DE FORMULARIO DE COTIZACIÓN (Resend vía Netlify) -------- */
+
+const cotizacionForm = document.getElementById("cotizacion-form");
+const cotizacionStatus = document.getElementById("cotizacion-status");
+
+if (cotizacionForm) {
+  cotizacionForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!cotizacionStatus) return;
+
+    // Construir payload
+    const formData = new FormData(cotizacionForm);
+    const data = Object.fromEntries(formData.entries());
+
+    // Validación básica rápida en el cliente
+    if (!data.nombre || !data.email || !data.servicio || !data.mensaje) {
+      cotizacionStatus.textContent =
+        "Por favor completa los campos obligatorios marcados.";
+      cotizacionStatus.style.color = "#b00020";
+      return;
+    }
+
+    cotizacionStatus.textContent = "Enviando tu solicitud...";
+    cotizacionStatus.style.color = "#777";
+
+    try {
+      const response = await fetch("/api/cotizar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error en la respuesta del servidor");
+      }
+
+      cotizacionStatus.textContent =
+        "Gracias. Hemos recibido tu solicitud y te contactaremos pronto.";
+      cotizacionStatus.style.color = "#0c7c2d";
+      cotizacionForm.reset();
+    } catch (error) {
+      console.error(error);
+      cotizacionStatus.textContent =
+        "Ocurrió un problema al enviar tu solicitud. Intenta de nuevo más tarde.";
+      cotizacionStatus.style.color = "#b00020";
+    }
+  });
+}
+
