@@ -103,30 +103,28 @@
         </div>
 
         <form
-                class="quote-form"
-                id="cotizacion-form"
-                action="mailto:ventas@tiksa.com"
-                method="POST"
-                enctype="text/plain"
+          class="quote-form"
+          id="cotizacion-form"
+          novalidate
         >
           <div class="form-row">
             <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="Nombre" required />
+            <input type="text" id="nombre" name="nombre" required />
           </div>
-
+        
           <div class="form-row">
             <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="Correo" required />
+            <input type="email" id="email" name="email" required />
           </div>
-
+        
           <div class="form-row">
             <label for="empresa">Empresa (opcional)</label>
-            <input type="text" id="empresa" name="Empresa" />
+            <input type="text" id="empresa" name="empresa" />
           </div>
-
+        
           <div class="form-row">
             <label for="servicio">Servicio de interés</label>
-            <select id="servicio" name="Servicio" required>
+            <select id="servicio" name="servicio" required>
               <option value="">Selecciona una opción</option>
               <option value="Imprenta profesional">Imprenta profesional</option>
               <option value="Mercancía promocional">Mercancía promocional</option>
@@ -134,50 +132,58 @@
               <option value="Otro">Otro / combinación de servicios</option>
             </select>
           </div>
-
+        
           <div class="form-row">
             <label for="cantidad">Cantidad aproximada</label>
             <input
-                    type="text"
-                    id="cantidad"
-                    name="Cantidad aproximada"
-                    placeholder="Ej. 250 libretas, 100 playeras, 50 termos"
+              type="text"
+              id="cantidad"
+              name="cantidad"
+              placeholder="Ej. 250 libretas, 100 playeras, 50 termos"
             />
           </div>
-
+        
           <div class="form-row">
             <label for="presupuesto">Presupuesto estimado (opcional)</label>
             <input
-                    type="text"
-                    id="presupuesto"
-                    name="Presupuesto estimado"
-                    placeholder="Ej. $10,000 MXN"
+              type="text"
+              id="presupuesto"
+              name="presupuesto"
+              placeholder="Ej. $10,000 MXN"
             />
           </div>
-
+        
           <div class="form-row">
             <label for="mensaje">Detalles del proyecto</label>
             <textarea
-                    id="mensaje"
-                    name="Detalles del proyecto"
-                    rows="4"
-                    required
-                    placeholder="Fechas estimadas, usos del material, ideas que tengas, etc."
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              required
+              placeholder="Fechas estimadas, usos del material, ideas que tengas, etc."
             ></textarea>
           </div>
-
+        
           <div class="form-row form-row-inline">
             <label class="checkbox-label">
-              <input type="checkbox" name="Aviso de privacidad" value="Aceptado" required />
+              <input
+                type="checkbox"
+                name="avisoPrivacidad"
+                value="Aceptado"
+                required
+              />
               <span>
-                  He leído y acepto el aviso de privacidad y el tratamiento de mis datos personales.
-                </span>
+                He leído y acepto el aviso de privacidad y el tratamiento de mis datos personales.
+              </span>
             </label>
           </div>
-
+        
           <button type="submit" class="btn btn-primary full-width">
             Enviar solicitud de cotización
           </button>
+        
+          <!-- Mensajes de estado -->
+          <p id="cotizacion-status" style="margin-top:0.8rem; font-size:0.85rem; color:#777;"></p>
         </form>
       </div>
     </div>
@@ -232,3 +238,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
