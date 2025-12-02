@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Endpoint amigable para la función
+[[redirects]]
+  from = "/api/cotizar"
+  to = "/.netlify/functions/sendQuote"
+  status = 200
+  force = true
